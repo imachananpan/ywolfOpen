@@ -1,13 +1,38 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <Screen>
+      <router-view/>
+  </Screen>
   </div>
 </template>
+<script>
+import firebase from 'firebase'
+import Screen from './views/Screen/Screen.vue'
 
+export default {
+  name: 'App',
+  components: {
+    Screen,
+  },
+  data() {
+    return {
+    }
+  },
+  methods: {
+    signIn() {
+      firebase.auth().signInWithEmailAndPassword(this.username, this.password).then(
+      // (user) => {
+      //   alert('Success!')
+      //   this.$router.push('/')
+      // },
+      // (err) => {
+      //   alert(err.message)
+      // },
+      )
+    },
+  },
+}
+</script>
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

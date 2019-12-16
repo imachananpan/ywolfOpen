@@ -1,11 +1,24 @@
 import Vue from 'vue'
 import firebase from 'firebase'
-import App from './App.vue'
-import router from './router'
+import 'vue-material/dist/vue-material.min.css'
+import 'vue-material/dist/theme/default.css'
+// import 'material-design-icons/iconfont/material-icons.css'
+import VueMaterial from 'vue-material'
+import MdIcon from 'vue-material/dist/components/MdIcon'
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+// added
 import store from './store'
+import router from './router'
+import App from './App.vue'
+
 
 Vue.config.productionTip = false
-
+Vue.use(BootstrapVue)
+Vue.use(VueMaterial)
+Vue.use(MdIcon)
 const config = {
   apiKey: 'AIzaSyBcH3YbCVp1YN6vZhe5WS5NGb9pHlQnfRk',
   authDomain: 'ywolf-30e74.firebaseapp.com',
