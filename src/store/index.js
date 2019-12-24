@@ -1,27 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { firebaseMutations, firebaseAction } from 'vuexfire'
-import db from '@/plugin/firebase.js'
+import db from '@/plugin/firebase'
+import village from './modules/village'
+
 Vue.use(Vuex)
-
+console.log('db:', db)
 export default new Vuex.Store({
-  state: {
-    village: []
-  },
-  mutations: {
-    ...firebaseMutations
-  },
-  actions: {
-    setVillageRef: firebaseAction(({ bindFirebaseRef }, ref) => {
-      bindFirebaseRef('village', ref)
-    })
-  },
-  getters: {
-    getVillages: (state) => {
-        return state.village
-    }
-  },
   modules: {
-
+    village,
   },
 })

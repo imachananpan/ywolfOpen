@@ -16,6 +16,7 @@ if (!firebase.apps.length) { // 初期化が複数回実行されることを防
   firebase.initializeApp(config)
 }
 const db = firebase.firestore()
-db.settings({ timestampsInSnapshots: true })
+// const settings = { timestampsInSnapshots: true }
+// db.settings(settings)
 
 export default db

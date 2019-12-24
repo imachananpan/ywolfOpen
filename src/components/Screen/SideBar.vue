@@ -32,10 +32,10 @@ export default {
     menuVisible: false,
   }),
   methods: {
-    onchange: function () {
+    onchange() {
       console.log('menuVisible', this.menuVisible)
       this.menuVisible = !this.menuVisible
-    }
+    },
   },
 }
 </script>

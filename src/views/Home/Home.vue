@@ -41,10 +41,24 @@
 
 <script>
 // @ is an alias to /src
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'Home',
-
+  mounted() {
+    this.getAllVillage()
+    console.log('firebasetest:', this.getVillageGetter)
+  },
+  methods: {
+    ...mapActions('village/', ['getAllVillage']),
+  },
+  computed: {
+    ...mapGetters('village', ['getVillage']),
+    getVillageGetter: function () {
+      console.log('getvillage', this.getVillages)
+      return this.getVillage
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>
