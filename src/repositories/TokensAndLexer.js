@@ -7,10 +7,10 @@ Tokens = {
   '}': 'RBRACE',
   'tokenEnd': 'EOF',
   '.': 'CONMA',
-  '+': 'PLUS',
-  '-': 'MINUS',
   '/': 'SLASH',
   '*': 'ASTERISK',
+  '+': 'PLUS',
+  '-': 'MINUS',
   '\'':　'quotation',
   '/\s/': 'WHITE',
   '<': 'GT',
@@ -120,7 +120,8 @@ function outputTokens(input) {
           outputTokens.Tokens.push(epsToken)
           continue
         }
-      } else if (getCharcter !== 'tokenEnd') {
+      }
+      if (getCharcter !== 'tokenEnd') {
         outputTokens.Tokens.push(Tokens[getCharcter])
       }
     } else {
@@ -134,7 +135,7 @@ function outputTokens(input) {
           letter = letter + getCharcter
 
           getCharcter = strings.read()
-          console.log('aa', getCharcter)
+          // console.log('aa', getCharcter)
         }
         if (keywords.hasOwnProperty(letter)) {
           //keywordなのか？
@@ -149,7 +150,7 @@ function outputTokens(input) {
           } else if (maybeKeyWord === '\''){
             outputTokens.Tokens.push('literal'+'String')
           } else {
-            outputTokens.Tokens.push('Declare'+'dont set token')
+            outputTokens.Tokens.push('Declare'+'dontSetToken')
           }
         }
         outputTokens.literal.push(letter)
